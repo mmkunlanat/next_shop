@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 
 // mock products
 const mockProducts = [
-  { _id: "1", name: "T-Shirt White", price: 299, image: "/placeholder.png" },
+  { _id: "1", name: "T-Shirt White", price: 299, image: "/test.jpg" },
   { _id: "2", name: "Hoodie Black", price: 499, image: "/placeholder.png" },
   { _id: "3", name: "Cap Red", price: 199, image: "/placeholder.png" },
   { _id: "4", name: "Jeans Blue", price: 699, image: "/placeholder.png" },
