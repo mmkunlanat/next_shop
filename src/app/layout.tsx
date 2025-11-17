@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { CartProvider } from "../components/CartContext";
 
-export const metadata = { title: "My Clothing Shop" };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="th">

@@ -1,28 +1,26 @@
-"use client"; // ต้องใส่ถ้าใช้ Client hooks ภายใน เช่น useCart
+"use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 
-export default function HomePage() {
-  const [products, setProducts] = useState<any[]>([]);
+// ใช้ mock data แทน database
+const mockProducts = [
+  { _id: "1", name: "T-Shirt White", price: 299, image: "/placeholder.png" },
+  { _id: "2", name: "Hoodie Black", price: 499, image: "/placeholder.png" },
+  { _id: "3", name: "Cap Red", price: 199, image: "/placeholder.png" },
+  { _id: "4", name: "Jeans Blue", price: 699, image: "/placeholder.png" },
+];
 
-  useEffect(() => {
-    fetch("/api/products")
-      .then(res => res.json())
-      .then(data => setProducts(data));
-  }, []);
+export default function HomePage() {
+  const [products] = useState(mockProducts);
 
   return (
     <div className="home-container">
       <h1 className="title">Welcome to My Clothing Shop</h1>
       <div className="products-grid">
-        {products.length > 0 ? (
-          products.map(product => (
-            <ProductCard key={product._id} product={product} />
-          ))
-        ) : (
-          <p>Loading products...</p>
-        )}
+        {products.map(product => (
+          <ProductCard key={product._id} product={product} />
+        ))}
       </div>
     </div>
   );

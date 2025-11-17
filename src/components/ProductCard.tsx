@@ -18,7 +18,7 @@ export default function ProductCard({ product }: { product: any }) {
 
   return (
     <div className="product-card">
-      <img src={product.image || "/placeholder.png"} alt={product.name} />
+      <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>฿{product.price}</p>
       <button onClick={handleAdd}>Add to Cart</button>
