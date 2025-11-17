@@ -1,7 +1,10 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer style={{ background: "#f5f5f5", padding: "12px", textAlign: "center", borderTop: "1px solid #eee", marginTop: "24px" }}>
-      © 2025 My Clothing Shop
+    <footer className={styles.footer}>
+      <div>My Clothing Shop</div>
+      <div className={styles.small}>© 2025 — Built with ❤️</div>
     </footer>
   );
 }
