@@ -1,0 +1,37 @@
+.wrapper {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.imageWrap img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+.price {
+  color: var(--accent, #0070f3);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.cta {
+  background: var(--accent, #0070f3);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.description {
+  color: #6b7280;
+  max-width: 520px;
+}
