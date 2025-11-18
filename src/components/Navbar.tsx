@@ -1,26 +1,48 @@
 "use client";
 
-import Link from "next/link";
-import { useCart } from "./CartContext";
-import styles from "./Navbar.module.css";
-
 export default function Navbar() {
-  const { cart } = useCart();
-
   return (
-    <nav className={styles.nav}>
-      <div className={styles.container}>
-        <div className={styles.brand}><Link href="/">MyShop</Link></div>
+    <>
+      <nav className="navbar">
+        <h2 className="logo">JERSYONE SHOP</h2>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <input placeholder="Search products..." className={styles.search} />
-          <div className={styles.navLinks}>
-            <Link className={styles.link} href="/">Home</Link>
-            <Link className={styles.link} href="/products">Products</Link>
-            <Link className={styles.link} href="/cart">Cart <span className={styles.cartBadge}>{cart.reduce((sum, i) => sum + (i.qty||1), 0)}</span></Link>
-          </div>
-        </div>
-      </div>
-    </nav>
+        <ul className="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <style jsx>{`
+        .navbar {
+          width: 100%;
+          padding: 15px 25px;
+          background: #442c18;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+        }
+
+        .logo {
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        .menu {
+          display: flex;
+          gap: 20px;
+          list-style: none;
+        }
+
+        .menu li:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      `}</style>
+    </>
   );
 }

@@ -1,17 +1,19 @@
-import "./globals.css"; // global styles
+import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { CartProvider } from "../components/CartContext";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata = {
+  title: "My Clothing Shop",
+  description: "Modern Online Clothing Store",
+};
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="th">
+    <html lang="en">
       <body>
-        <CartProvider>
-          <Navbar />
-          <main className="container">{children}</main>
-          <Footer />
-        </CartProvider>
+        <Navbar />
+        <main style={{ minHeight: "80vh" }}>{children}</main>
+        <Footer />
       </body>
     </html>
   );
